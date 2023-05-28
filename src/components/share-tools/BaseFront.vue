@@ -2,51 +2,33 @@
   <div class="front">
     <div class="front-part" id="left">
       <div class="left-title-container">
-        <h1 class="left-title">Listado Canciones</h1>
+        <h1 class="left-title">{{ songs.data.title }}</h1>
       </div>
       <ul class="listed">
-        <li class="unique-song">
+        <li class="unique-song" v-for="item in songs.songs" :key="item">
           <div class="description-song">
-            <h2 class="song-title">1-Cancion 1</h2>
-            <h3 class="song-detail">Duration</h3>
-            <img src="@/assets/like.png" alt="" class="like" />
-          </div>
-        </li>
-        <li class="unique-song">
-          <div class="description-song">
-            <h2 class="song-title">2-Cancion 2</h2>
-            <h3 class="song-detail">Duration</h3>
-            <img src="@/assets/like.png" alt="" class="like" />
-          </div>
-        </li>
-        <li class="unique-song">
-          <div class="description-song">
-            <h2 class="song-title">3-Cancion 3</h2>
-            <h3 class="song-detail">Duration</h3>
-            <img src="@/assets/like.png" alt="" class="like" />
-          </div>
-        </li>
-        <li class="unique-song">
-          <div class="description-song">
-            <h2 class="song-title">4-Cancion 4</h2>
-            <h3 class="song-detail">Duration</h3>
-            <img src="@/assets/like.png" alt="" class="like" />
-          </div>
-        </li>
-        <li class="unique-song">
-          <div class="description-song">
-            <h2 class="song-title">5-Cancion 5</h2>
-            <h3 class="song-detail">Duration</h3>
-            <img src="@/assets/like.png" alt="" class="like" />
-          </div>
+            <div class="description-right">
+              <div class="button-play-container"><button>Play</button></div>
+            </div>
+            <div class="description-center">
+              <div class="song-container">
+                <h2 class="song-title">{{ item.title }}</h2>
+                <h3 class="song-artist">{{ item.artist.name }}</h3>
+              </div>
+              <div class="description-left">
+                <h3 class="song-detail">{{ item.duration }}</h3>
+                <img src="@/assets/like.png" alt="" class="like" />
+              </div>
+            </div>
+          </div>  
         </li>
       </ul>
     </div>
     <div class="front-part" id="center">
-      <img src="" alt="" class="disc" />
+      <img :src="songs.data.cover_medium" alt="" class="disc" />
       <div class="center-title">
-        <h1 class="title">Titulo</h1>
-        <h2 class="subtitle">Artista</h2>
+        <h1 class="title">{{ songs.artist.name}}</h1>
+        <h2 class="subtitle">{{ songs.data.title }}</h2>
       </div>
       <div class="repro">
         <h2 class="title">---Barra tiempo---</h2>
@@ -84,13 +66,35 @@
       </div>
       <div class="others-reference">
         <h2 class="others">otros artistas</h2>
-        <div class="others-container">
-          <img src="" alt="" class="disc-others" />
-          <img src="" alt="" class="disc-others" />
-          <img src="" alt="" class="disc-others" />
-          <img src="" alt="" class="disc-others" />
-        </div>
+        <ul class="others-container">
+          <li class="disc-others">
+            <img :src="songs.datanext1.cover_medium" alt="" class="disc-next" />
+          </li>
+          <li class="disc-others">
+            <img :src="songs.datanext2.cover_medium" alt="" class="disc-next" />
+          </li>
+          <li class="disc-others">
+            <img :src="songs.datanext3.cover_medium" alt="" class="disc-next" />
+          </li>
+          <li class="disc-others">
+            <img :src="songs.datanext4.cover_medium" alt="" class="disc-next" />
+          </li>
+        </ul>
       </div>
     </div>
   </div>
 </template>
+<script>
+import { useMusicStore } from "../stores/musicStore";
+
+export default {
+  name: "BaseFront",
+  component: {},
+  setup() {
+    const songs = useMusicStore();
+    return {
+      songs,
+    };
+  },
+};
+</script>
