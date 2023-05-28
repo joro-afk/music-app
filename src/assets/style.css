@@ -1,0 +1,263 @@
+@font-face {
+    font-family: 'LEMONMILK-Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('LEMONMILK-Light'), url('LEMONMILK-Light.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Cocogoose-Compressed-Thin-trial';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Cocogoose-Compressed-Thin-trial'), url('Cocogoose-Compressed-Thin-trial.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'MADE Tommy Soft Regular PERSONAL USE';
+    font-style: normal;
+    font-weight: normal;
+    src: local('MADE Tommy Soft Regular PERSONAL USE'), url('MADE Tommy Soft Regular PERSONAL USE.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'MADE Tommy Soft Thin PERSONAL USE';
+    font-style: normal;
+    font-weight: normal;
+    src: local('MADE Tommy Soft Thin PERSONAL USE'), url('MADE Tommy Soft Thin PERSONAL USE.woff') format('woff');
+}
+
+
+body {
+    margin: 0;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+}
+
+.main-header {
+    background-color: #000;
+    height: 3rem;
+}
+
+main {
+    position: relative;
+    height: calc(100vh - 6rem);
+    /* background-image: url('../assets/bg.jpg'); */
+    background-color: #18192b;
+}
+
+.main-footer {
+    background-color: #000;
+    height: 3rem;
+}
+
+.front {
+    height: calc(100vh - 6rem);
+    display: flex;
+    flex-direction: row;
+}
+
+.front-part {
+    width: calc(100% / 3);
+
+    padding: 0.5rem;
+}
+
+#left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-title-container {
+    height: 15%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-title {
+    font-family: 'LEMONMILK-Light';
+    color: #fffeff;
+}
+
+.listed {
+    width: 100%;
+    list-style: none;
+    height: 80%;
+    padding: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.unique-song {
+    width: calc(100% - 4px);
+    background-color: #1e1f34;
+    height: calc(((100% /5) - 0.5rem) - 4px);
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 3px 3px 6px 2px #151625;
+}
+
+.unique-song:hover {
+    background-color: #2f3255;
+}
+
+.description-song {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.song-title {
+    font-family: 'MADE Tommy Soft Regular PERSONAL USE';
+    color: #fffeff;
+}
+
+.song-detail {
+    font-family: 'MADE Tommy Soft Thin PERSONAL USE';
+    color: #555479;
+}
+
+.like {
+    height: 1.5rem;
+    width: 1.5rem;
+    opacity: 0.3;
+}
+
+.like:hover {
+    opacity: 1;
+    filter: brightness(150%);
+}
+
+
+#center {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.center-title {
+    height: 15%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fffeff;
+}
+
+.title {
+    margin-bottom: 0.5rem;
+    font-family: 'LEMONMILK-Light';
+    color: #fffeff;
+}
+
+.subtitle {
+    font-family: 'LEMONMILK-Light';
+    color: #fffeff;
+}
+
+.disc {
+    height: 50%;
+    width: 98%;
+    background-color: #9e8232;
+    border-radius: 0.5rem;
+}
+
+.repro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 15%;
+    width: 100%;
+    padding: 0.5rem;
+}
+
+.button-container {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    font-family: 'Cocogoose-Compressed-Thin-trial';
+    margin: 0.5rem;
+    font-size: 1.5em;
+    border-radius: 0.2rem;
+    padding: 0.3rem;
+    border: solid 2px #929292;
+}
+
+#right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.right-title-container {
+    height: 15%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.right-title {
+    font-family: 'LEMONMILK-Light';
+    color: #fffeff;
+}
+
+.lyrics-container {
+    padding: 0 3rem;
+    height: 60%;
+}
+
+.lyrics {
+    font-size: 1.1em;
+    font-family: 'Cocogoose-Compressed-Thin-trial';
+    color: #b2b2bf;
+    margin-block-start: 0;
+}
+
+.others-reference {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.others {
+    font-family: 'LEMONMILK-Light';
+    color: #fffeff;
+    text-align: center;
+}
+
+.others-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.disc-others {
+    height: 8rem;
+    width: calc((100% / 4) - 0.2rem);
+    background-color: #9e8232;
+    margin-right: 0.2rem;
+}
