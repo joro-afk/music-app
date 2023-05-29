@@ -99,5 +99,7 @@ export const useMusicStore = defineStore({
       this.value = Math.floor(Math.random() * (max - min) + min);
       return this.value;
     },
+
+  
   },
 });

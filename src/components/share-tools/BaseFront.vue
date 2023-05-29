@@ -8,7 +8,9 @@
         <li class="unique-song" v-for="item in songs.songs" :key="item">
           <div class="description-song">
             <div class="description-right">
-              <div class="button-play-container"><button>Play</button></div>
+              <div class="button-play-container">
+                <button @click.prevent="playSound(item.preview)">Play</button>
+              </div>
             </div>
             <div class="description-center">
               <div class="song-container">
@@ -20,14 +22,13 @@
                 <img src="@/assets/like.png" alt="" class="like" />
               </div>
             </div>
-          </div>  
+          </div>
         </li>
       </ul>
     </div>
     <div class="front-part" id="center">
       <img :src="songs.data.cover_medium" alt="" class="disc" />
       <div class="center-title">
-        <h1 class="title">{{ songs.artist.name}}</h1>
         <h2 class="subtitle">{{ songs.data.title }}</h2>
       </div>
       <div class="repro">
@@ -95,6 +96,13 @@ export default {
     return {
       songs,
     };
+  },
+
+  methods: {
+    playSound(preview) {
+      let audio = new Audio(preview);     audio.play();
+      console.log(audio);
+    },
   },
 };
 </script>
