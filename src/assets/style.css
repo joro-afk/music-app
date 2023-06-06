@@ -33,9 +33,11 @@ body {
 
 h1,
 h2,
-h3 {
+h3,
+p {
     margin: 0;
 }
+
 
 .main-header {
     background-color: #000;
@@ -56,38 +58,122 @@ main {
 .front {
     min-height: calc(100vh - 7rem);
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .front-part {
-    width: calc(100% / 3);
     padding: 0.5rem;
 }
 
 #left {
     display: flex;
-    flex-direction: column;
+    justify-content: start;
+    flex-direction: row;
     height: min-content;
-    min-height: calc(100vh - 7rem);
+    width: calc(100% - 2rem);
+    padding: 0 1rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
 }
 
-.left-title-container {
-    height: 10rem;
-    width: 100%;
+.disc {
+    min-width: 15.625rem;
+    min-height: 15.625rem;
+    max-width: 25rem;
+    max-height: 25rem;
+    border-radius: 1rem;
+    margin-inline-end: 2rem;
+    margin-inline-start: 2rem;
+    box-shadow: -20px -20px 22px #0a0a11,
+        20px 20px 22px #262845;
+    background-image: url('../assets/images/default.png');
+    background-size: cover;
+}
+
+.repro-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
+    min-width: calc(50% + 3rem);
+    width: max-content;
 }
 
 .left-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5rem;
+    margin-inline-end: 2rem;
     font-family: 'LEMONMILK-Light';
     color: #fffeff;
     font-size: 1.3em;
-    text-align: center;
+    min-width: 50%;
+}
+
+.title {
+    font-family: 'LEMONMILK-Light';
+    color: #fffeff;
+    font-size: 1.3em;
+    margin-bottom: 1rem;
+    
+}
+
+.release-title {
+    margin-bottom: 0.5rem;
+}
+
+.repro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+audio {
+    background-color: bisque;
+}
+
+.button-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.2rem;
+}
+
+.play-button {
+    font-family: 'Cocogoose-Compressed-Thin-trial';
+    margin: 0.5rem;
+    font-size: 1.5em;
+    border-radius: 0.2rem;
+    padding: 0.3rem;
+    border: solid 2px #929292;
+}
+
+.repro-button-back,
+.repro-button-next {
+    height: 3rem;
+    width: 4rem;
+    background-color: #1e1f34;
+    border: 0;
+    padding: .25rem;
+    border-radius: 0.8rem;
+    box-shadow: 3px 3px 6px 2px #151625;
+}
+
+.repro-button-back:hover,
+.repro-button-next:hover {
+    background-color: #2f3255;
+}
+
+.arrow-img {
+    width: 2.5rem;
 }
 
 .listed {
-    width: 100%;
+    width: calc(100% - 1rem);
     list-style: none;
     min-height: 80%;
     padding: 0 0.5rem;
@@ -97,12 +183,12 @@ main {
 }
 
 .unique-song {
-    width: calc(100% - 4px);
+    width: calc(100% - 0.4rem);
     background-color: #1e1f34;
-    height: calc(((100% /5) - 0.5rem) - 4px);
     margin-bottom: 0.5rem;
     border-radius: 0.5rem;
     box-shadow: 3px 3px 6px 2px #151625;
+    padding: 0.2rem;
 }
 
 .unique-song:hover {
@@ -116,28 +202,10 @@ main {
 .description-song {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
     height: 100%;
     width: 100%;
-}
-
-.description-center {
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-    justify-content: space-between;
-}
-
-.song-title {
-    font-family: 'MADE Tommy Soft Regular PERSONAL USE';
-    color: #fffeff;
-    font-size: 1.2em;
-}
-
-.song-artist {
-    font-family: 'MADE Tommy Soft Thin PERSONAL USE';
-    color: #555479;
 }
 
 .description-left {
@@ -147,6 +215,20 @@ main {
     align-items: center;
 }
 
+.description-center {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 1rem;
+}
+
+.description-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
 
 .song-detail {
     font-family: 'MADE Tommy Soft Thin PERSONAL USE';
@@ -165,130 +247,14 @@ main {
     filter: brightness(150%);
 }
 
-
-#center {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-}
-
-.center-title {
-    height: 10rem;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.song-title {
+    font-family: 'MADE Tommy Soft Regular PERSONAL USE';
     color: #fffeff;
-}
-
-.title {
-    margin-bottom: 0.5rem;
-    font-family: 'LEMONMILK-Light';
-    color: #fffeff;
-}
-
-.subtitle {
-    font-family: 'LEMONMILK-Light';
-    color: #fffeff;
-}
-
-.disc {
-    width: 25rem;
-    height: 25rem;
-    border-radius: 0.5rem;
-    margin-top: 5rem;
-}
-
-.repro {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 10rem;
-    width: 100%;
-    padding: 0.5rem;
-}
-
-.button-container {
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-button {
-    font-family: 'Cocogoose-Compressed-Thin-trial';
-    margin: 0.5rem;
-    font-size: 1.5em;
-    border-radius: 0.2rem;
-    padding: 0.3rem;
-    border: solid 2px #929292;
-}
-
-#right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.right-title-container {
-    height: 10rem;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-
-.right-title {
-    font-family: 'LEMONMILK-Light';
-    color: #fffeff;
-    font-size: 1.3em;
-}
-
-.lyrics-container {
-    padding: 0 3rem;
-    height: 25rem;
-    margin: 2rem 0;
-}
-
-.lyrics {
     font-size: 1.1em;
-    font-family: 'Cocogoose-Compressed-Thin-trial';
-    color: #b2b2bf;
-    margin-block-start: 0;
 }
 
-.others-reference {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 100%;
-    margin-bottom: 1rem;
-}
-
-.others {
-    font-family: 'LEMONMILK-Light';
-    color: #fffeff;
-    text-align: center;
-}
-
-.others-container {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    padding: 0;
-}
-
-.disc-others {
-    height: 8rem;
-    width: calc((100% / 4) - 0.2rem);
-    margin-right: 0.2rem;
-}
-
-.disc-next {
-    height: 100%;
+.song-artist {
+    font-family: 'MADE Tommy Soft Thin PERSONAL USE';
+    color: #555479;
+    font-size: .9em;
 }
