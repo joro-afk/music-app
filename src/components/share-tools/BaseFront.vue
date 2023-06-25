@@ -5,11 +5,11 @@
       <div class="repro-container">
         <div class="left-title">
           <h2 class="title">{{ songs.data.title }}</h2>
-          <p class="release-title">Relesed: {{ songs.data.release_date }}</p>
-          <p class="label-title">Label: {{ songs.data.label }}</p>
+          <p class="release-title">{{ songs.data.release_date }}</p>
+          <p class="label-title">{{ songs.data.label }}</p>
         </div>
         <div class="repro">
-          <audio controls class="audio"><source src="" /></audio>
+          <audio class="audio" controls><source src="" /></audio>
           <div class="button-container">
             <button
               @click="songs.setSongs()"
@@ -47,7 +47,11 @@
                   class="play-button"
                   @click.prevent="playSound(item.preview)"
                 >
-                  Play
+                  <img
+                    src="@/assets/images/play.png"
+                    class="button-img"
+                    alt=""
+                  />
                 </button>
               </div>
             </div>
@@ -84,7 +88,7 @@ export default {
   methods: {
     playSound(preview) {
       let audio = new Audio(preview);
-      audio.play()
+      audio.play();
     },
   },
 };
