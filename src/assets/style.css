@@ -47,7 +47,8 @@ p {
 main {
     position: relative;
     height: min-content;
-    background-color: #18192b;
+    background-image: url('../assets/images/wallpaper.svg');
+    background-size: cover;
 }
 
 .main-footer {
@@ -84,8 +85,8 @@ main {
     border-radius: 1rem;
     margin-inline-end: 2rem;
     margin-inline-start: 2rem;
-    box-shadow: -20px -20px 22px #0a0a11,
-        20px 20px 22px #262845;
+    background: #18192b;
+    box-shadow: 10px 10px 10px #141525;
     background-image: url('../assets/images/default.png');
     background-size: cover;
 }
@@ -115,7 +116,6 @@ main {
     color: #fffeff;
     font-size: 1.3em;
     margin-bottom: 1rem;
-    
 }
 
 .release-title {
@@ -125,13 +125,9 @@ main {
 .repro {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center;    
     align-items: center;
     padding: 0.5rem;
-}
-
-audio {
-    background-color: bisque;
 }
 
 .button-container {
@@ -144,32 +140,41 @@ audio {
 }
 
 .play-button {
-    font-family: 'Cocogoose-Compressed-Thin-trial';
-    margin: 0.5rem;
-    font-size: 1.5em;
-    border-radius: 0.2rem;
-    padding: 0.3rem;
-    border: solid 2px #929292;
+    display: flex;
+    align-items: center;
+    margin: 0.1rem 0.1rem 0.1rem 0.5rem;
+    border-radius: 10%;
+    background-color: #fff;
+    padding: 4px;
+    border: none;
+    box-shadow: 3px 3px 3px #000000;
+}
+
+.button-img {
+    height: 1.5rem;
+    width: 1.5rem;
+
 }
 
 .repro-button-back,
 .repro-button-next {
     height: 3rem;
-    width: 4rem;
-    background-color: #1e1f34;
+    width: 3rem;
+    background-color: #fff;
     border: 0;
-    padding: .25rem;
-    border-radius: 0.8rem;
-    box-shadow: 3px 3px 6px 2px #151625;
+    padding: 4px;
+    border-radius: 10%;
+    box-shadow: 3px 3px 6px 2px #000;
 }
 
 .repro-button-back:hover,
 .repro-button-next:hover {
-    background-color: #2f3255;
+    filter: invert(0.05);
+    box-shadow: none;
 }
 
 .arrow-img {
-    width: 2.5rem;
+    height: 100%;
 }
 
 .listed {
@@ -188,7 +193,7 @@ audio {
     margin-bottom: 0.5rem;
     border-radius: 0.5rem;
     box-shadow: 3px 3px 6px 2px #151625;
-    padding: 0.2rem;
+    padding: 0.1rem;
 }
 
 .unique-song:hover {
