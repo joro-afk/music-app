@@ -48,10 +48,5 @@ export const useMusicStore = defineStore({
       return this.value;
     },
 
-    playSound(preview) {
-      this.audio = new Audio(preview);
-      this.audio.play();
-      console.log(this.audio);
-    },
   },
 });
