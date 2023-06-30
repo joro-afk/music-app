@@ -1,7 +1,53 @@
 <template>
   <div class="front">
     <div class="front-part" id="left">
-      <img :src="songs.image" alt="" class="disc" />
+      <div class="disc-container-2">
+        <button
+          @click="songs.setSongs()"
+          type="button"
+          class="repro-button-back"
+        >
+          <img src="@/assets/images/arrow-back.png" class="arrow-img" alt="" />
+        </button>
+        <img :src="songs.image" alt="" class="disc" />
+        <button
+          @click="songs.setSongs()"
+          type="button"
+          class="repro-button-next"
+        >
+          <img src="@/assets/images/arrow-next.png" class="arrow-img" alt="" />
+        </button>
+      </div>
+
+      <div class="disc-container">
+        <img :src="songs.image" alt="" class="disc" />
+
+        <div class="button-container">
+          <button
+            @click="songs.setSongs()"
+            type="button"
+            class="repro-button-back"
+          >
+            <img
+              src="@/assets/images/arrow-back.png"
+              class="arrow-img"
+              alt=""
+            />
+          </button>
+          <button
+            @click="songs.setSongs()"
+            type="button"
+            class="repro-button-next"
+          >
+            <img
+              src="@/assets/images/arrow-next.png"
+              class="arrow-img"
+              alt=""
+            />
+          </button>
+        </div>
+      </div>
+
       <div class="repro-container">
         <div class="left-title">
           <h2 class="title">{{ songs.data.title }}</h2>
@@ -9,31 +55,10 @@
           <p class="label-title">{{ songs.data.label }}</p>
         </div>
         <div class="repro">
-          <audio class="audio" controls><source src="" /></audio>
-          <div class="button-container">
-            <button
-              @click="songs.setSongs()"
-              type="button"
-              class="repro-button-back"
-            >
-              <img
-                src="@/assets/images/arrow-back.png"
-                class="arrow-img"
-                alt=""
-              />
-            </button>
-            <button
-              @click="songs.setSongs()"
-              type="button"
-              class="repro-button-next"
-            >
-              <img
-                src="@/assets/images/arrow-next.png"
-                class="arrow-img"
-                alt=""
-              />
-            </button>
+          <div class="audio">
+            <img src="@/assets/images/play.png" alt="play" class="repro-play" />
           </div>
+          <div class="button-container"></div>
         </div>
       </div>
     </div>
@@ -72,16 +97,12 @@ export default {
   component: {},
   setup() {
     const songs = useMusicStore();
+
     return {
       songs,
     };
   },
 
-  methods: {
-    playSound(preview) {
-      let audio = new Audio(preview);
-      audio.play();
-    },
-  },
+  methods: {},
 };
 </script>
