@@ -43,16 +43,8 @@
           <div class="description-song">
             <div class="description-left">
               <div class="button-play-container">
-                <button
-                  class="play-button"
-                  @click.prevent="playSound(item.preview)"
-                >
-                  <img
-                    src="@/assets/images/play.png"
-                    class="button-img"
-                    alt=""
-                  />
-                </button>
+                <audio :src="item.preview"></audio>
+                <button class="play-button play"></button>
               </div>
             </div>
             <div class="description-center">
