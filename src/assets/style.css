@@ -52,7 +52,7 @@ p {
 main {
     position: relative;
     height: min-content;
-    background-image: url('../assets/images/wallpaper.svg');
+    background-image: url('../assets/images/wallpaper.png');
     background-size: cover;
 }
 
