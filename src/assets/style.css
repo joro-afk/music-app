@@ -67,6 +67,12 @@ main {
     }
 }
 
+
+.main-footer > h1{
+    font-size: .5em;
+    color: #fff;
+}
+
 .front {
     min-height: calc(100vh - 2rem);
     display: flex;
